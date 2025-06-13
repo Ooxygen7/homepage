@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/x-icon" href="pic/jiaobiao.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ooxygen</title>
+    <style>
+        /* --- 全局样式 --- */
+        :root {
+            --primary-text-color: #333333; /* 主要文字颜色，深灰色 */
+            --secondary-text-color: #757575; /* 次要文字颜色，中灰色 */
+            --background-color: #ffffff; /* 背景色，纯白 */
+            --border-color: #eeeeee; /* 边框颜色，极浅灰 */
+            --hover-background-color: #f7f7f7; /* 悬停背景色 */
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 主字体 */
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- 主容器布局 --- */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 90%;
+            background: var(--background-color);
+            margin: 2rem;
+        }
+
+        /* --- 左侧边栏 (头像和简介) --- */
+        .sidebar {
+            flex: 0 0 300px; /* 固定宽度，不伸缩 */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 圆形遮罩 */
+            object-fit: cover; /* 防止图片变形 */
+            margin-bottom: 2rem;
+            border: 5px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .bio h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio p {
+            font-size: 1rem;
+            color: var(--secondary-text-color);
+            line-height: 1.6;
+        }
+
+        /* --- 右侧主内容 (项目列表) --- */
+        .main-content {
+            flex-grow: 1; /* 占据剩余空间 */
+            padding: 40px;
+            border-left: 1px solid var(--border-color); /* 左侧分割线 */
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .project-list {
+            margin-top: 2rem;
+            display: grid; /* 使用Grid布局，方便未来扩展 */
+            gap: 1.5rem; /* 项目之间的间距 */
+        }
+
+        .project-item {
+            display: block;
+            padding: 1.5rem 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-text-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px); /* 悬停时轻微上浮 */
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-color: #ddd;
+        }
+
+        .project-item h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .project-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--secondary-text-color);
+        }
+
+        /* --- 响应式设计：在小屏幕上 (如手机) 将两栏变为一栏 --- */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* 垂直排列 */
+                width: 100%;
+                margin: 0;
+            }
+
+            .sidebar {
+                flex-basis: auto; /* 高度自动 */
+                padding: 2rem;
+            }
+
+            .main-content {
+                border-left: none; /* 移除分割线 */
+                border-top: 1px solid var(--border-color); /* 在上方添加分割线 */
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <img src="pic/touxiang.png" alt="我的头像" class="avatar">
+            <div class="bio">
+                <h1>Ooxygen7</h1>
+                <p>
+                    LLM ＆ AIGC.
+                    <br>
+                    宝石みたいに輝いてる
+                </p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2>无聊时的产物们</h2>
+            <div class="project-list">
+
+                <a href="https://ooxygen7.github.io/black/" target="_blank" class="project-item">
+                    <h3>Ooxygen's TankBattle</h3>
+                    <p>简单但稍微有趣的坦克大战   （最后更新日期6/13/2025）</p>
+                </a>
+
+                </div>
+        </main>
+    </div>
+
+</body>
+</html>
